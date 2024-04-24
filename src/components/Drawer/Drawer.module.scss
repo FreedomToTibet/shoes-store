@@ -1,0 +1,154 @@
+.overlay {
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+	right: 0;
+	bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  overflow: hidden;
+  .overlayDrawer {
+    position: absolute;
+    width: 420px;
+    height: 100%;
+    right: -420px;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-out;
+  }
+
+  .overlayItems {
+    overflow: auto;
+    margin-bottom: 40px;
+    flex: 1;
+  }
+  .overlayTotal {
+    ul {
+      display: block;
+      margin-bottom: 40px !important;
+    }
+    div {
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed #dfdfdf;
+      position: relative;
+      top: -4px;
+      margin: 0 7px;
+    }
+
+    .greenButton {
+      position: relative;
+      &:disabled {
+        animation: buttonloading 0.6s ease-in-out infinite;
+      }
+      &:hover {
+        img {
+          transform: translateX(5px);
+        }
+      }
+      img {
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.cart {
+  background: #ffffff;
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .cartImg {
+    height: 70px;
+    width: 70px;
+    background-size: contain;
+    background-position: 0 -3px;
+    background-repeat: no-repeat;
+    margin-right: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  b {
+    font-size: 14px;
+  }
+}
+
+.remove {
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.greenButton {
+  width: 100%;
+  height: 55px;
+  background: #9dd558;
+  border-radius: 18px;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background: lighten(#9dd558, 5%);
+  }
+  &:active {
+    background: darken(#9dd558, 10%);
+  }
+  &:disabled {
+    background-color: #bebebe;
+    cursor: default;
+  }
+}
+
+@keyframes buttonloading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlayVisible {
+  visibility: visible;
+  opacity: 1;
+  .overlayDrawer {
+    right: 0px;
+  }
+}
