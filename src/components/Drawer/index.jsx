@@ -35,6 +35,10 @@ export default function Drawer({ onClose, onRemove, items = [], opened }) {
       console.log(error);
     }
     setIsLoading(false);
+		setTimeout(() => {
+			setIsOrderComplited(false);
+			onClose();
+		}, 3000);
   };
 
 	useEffect(() => {

@@ -29,13 +29,15 @@ export default function Home({
 		});
 	};
 
+	const searchPositionStyle = searchValue ? { position: "relative" } : {position: "static"};
+
 	return (
 		<div className="conten p-40">
 			<div className="d-flex align-center mb-40 justify-between">
 				<h1 className="">
 					{searchValue ? `Search by request "${searchValue}"` : "All pairs"}
 				</h1>
-				<div className="search d-flex">
+				<div className="search d-flex" style={searchPositionStyle}>
 					<img src="./img/search.svg" alt="search" />
 					<input
 						value={searchValue}
