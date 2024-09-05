@@ -1,5 +1,3 @@
-# HELLO ! ! !
-
 ## Welcome to our small sports shoe store website
 
 ### Here, you can:
