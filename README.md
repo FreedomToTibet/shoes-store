@@ -1,6 +1,6 @@
 ## Welcome to our small sports shoe store website
 
-### Here, you can:
+### Here you can:
 - add and remove products to/from favorites
 - add and remove items to/from the cart
 - place product orders
